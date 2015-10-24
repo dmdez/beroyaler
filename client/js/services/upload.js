@@ -5,7 +5,7 @@ module.exports = function($http, $q) {
       timestamp: Date.now(),
       upload_preset: 'xjkacs1n',
       folder: 'beroyaler',
-      eager: `l_royals_s97dxe,g_north_west,w_100,x_${image.x},y_${image.y}`
+      eager: `l_royals_s97dxe,g_north_west,w_200,x_${image.x},y_${image.y}`
     };
 
     var fd = new FormData();

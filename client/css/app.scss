@@ -34,8 +34,6 @@ img {
 .fileField {
   border: 1px dashed rgba(255,255,255,.7);
   position: relative;
-  margin: 0 auto;
-  max-width: 40em;
   input {
     padding: 10% 50%;
     opacity: 0;
@@ -84,9 +82,14 @@ img-crop canvas {
   /* mobile webkit */
 }
 
+.container {
+  max-width: 40em;
+  margin: 0 auto;
+}
+
 .logo {
-  width: 30%;
-  height: 30%;
+  width: 40%;
+  height: 40%;
   position: absolute;
   top: 0;
   left: 0;

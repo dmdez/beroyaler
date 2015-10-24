@@ -12,7 +12,7 @@ module.exports = function(upload, $window) {
           </div>
         </div>
         <div ng-show="step == 'crop'">
-          <div  class="cropContainer">
+          <div class="cropContainer">
             <div class="cropArea">
               <img-crop image="image.data" result-image-format="image/jpeg" result-image="image.cropped" result-image-size="400" area-type="square"></img-crop>
             </div>
@@ -29,7 +29,7 @@ module.exports = function(upload, $window) {
               <img src="http://res.cloudinary.com/dmdez/image/upload/v1445541588/royals_s97dxe.png" />
             </div>
           </div>
-          <div class="button" ng-click="upload()">Upload</a>
+          <a class="button" ng-click="upload()">Upload</a>
         </div>
       </div>
       <div ng-show="loading">
@@ -47,10 +47,6 @@ module.exports = function(upload, $window) {
 
       scope.step = 'upload';
       scope.preview = false;
-
-      scope.$watch("image.x", function(val) {
-        console.log(val);
-      });
 
       scope.$watch("file", function(file) {
         if ( file ) {
