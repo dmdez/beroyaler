@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <% if ( typeof title == 'undefined' ) { %>
+    <title>BeRoyaler</title>
+  <% } else { %>
+    <title><%- title %></title>
+  <% } %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <% if ( typeof og_image != 'undefined') { %>
+    <meta property="og:image" content="<%- og_image %>" />
+  <% } %>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Muli:300" />
+  <script src="/js/styles.bundle.js"></script>
+  <% if (ENV_DEVELOPMENT) { %>
+    <script src="http://localhost:35729/livereload.js"></script>
+  <% } %>
+</head>
+<body>
+
+  <header class="siteHeader">
+    <a href="/"><img src="/images/BeRoyal.png" /></a>
+  </header>
