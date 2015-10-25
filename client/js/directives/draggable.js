@@ -1,5 +1,3 @@
-var Draggable = require('draggy');
-
 module.exports = function() {
   return {
     restrict: 'A',
@@ -8,16 +6,16 @@ module.exports = function() {
       y: '='
     },
     link: function(scope, el, attrs, ngModel){
-      var draggy = new Draggable( el[0], {
-        within: 'parent'
+      var draggy = new Draggy(el[0], {
+        bindTo: el.parent()[0],
+        onChange: function(x, y) {
+          scope.$apply(function(){
+            scope.x = x;
+            scope.y = y;
+          });
+        }
       });
-      draggy.on('dragend', function( event, pointer ) {
-        var coords = draggy.getCoords();
-        scope.$apply(function(){
-          scope.x = coords[0];
-          scope.y = coords[1];
-        });
-      });
+      return;
     }
   };
 };

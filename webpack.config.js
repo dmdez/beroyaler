@@ -10,6 +10,12 @@ module.exports = {
     filename: "[name].bundle.js"
   },
   module: {
-    loaders: [{ test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader' }]
+    loaders: [
+      { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader' },
+      {
+        test: require.resolve("blueimp-load-image-browserify/js/load-image"),
+        loader: "imports?this=>window"
+      }
+    ]
   }
 };

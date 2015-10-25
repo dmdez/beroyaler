@@ -1,0 +1,33 @@
+<div>
+  <div ng-hide="loading">
+    <div ng-show="step == 'upload'">
+      <div class="fileField">
+        <input type="file" id="addfile" ng-model="file" file />
+        <label for="addfile" class="button">Add Photo</label>
+      </div>
+    </div>
+    <div ng-show="step == 'crop'">
+      <div class="cropContainer">
+        <div class="cropArea">
+          <img-crop image="image.data" result-image-format="image/jpeg" result-image="image.cropped" result-image-size="400" area-type="square"></img-crop>
+        </div>
+        <div class="button" ng-click="goToStep('logo')">Done Cropping</div>
+        <div>
+          <a ng-click="goToStep('upload')">Change Photo</a>
+        </div>
+      </div>
+    </div>
+    <div ng-show="step == 'logo'">
+      <div class="preview">
+        <img ng-src="{{image.cropped}}" />
+        <div draggable x="image.x" y="image.y" class="logo">
+          <img src="http://res.cloudinary.com/dmdez/image/upload/v1445541588/royals_s97dxe.png" />
+        </div>
+      </div>
+      <a class="button" ng-click="upload()">Upload</a>
+    </div>
+  </div>
+  <div ng-show="loading">
+    Uploading image...
+  </div>
+</div>
