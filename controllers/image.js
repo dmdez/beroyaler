@@ -15,6 +15,7 @@ exports.get = function(id) {
           deferred.resolve(image);
         }
       });
+      deferred.resolve(result);
     } else {
       deferred.reject();
     }

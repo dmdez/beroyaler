@@ -1,0 +1,12 @@
+<div>
+  <div ng-hide="loading">
+    <div class="preview">
+      <img ng-src="{{image.cropped}}" />
+      <div draggable x="image.x" y="image.y" class="logo">
+        <img src="http://res.cloudinary.com/dmdez/image/upload/v1445541588/royals_s97dxe.png" />
+      </div>
+    </div>
+    <a class="button" ng-click="upload()">Upload</a>
+  </div>
+  <div ng-show="loading" class="loader"></div>
+</div>

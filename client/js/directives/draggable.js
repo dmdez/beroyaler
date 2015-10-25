@@ -9,10 +9,12 @@ module.exports = function() {
       var draggy = new Draggy(el[0], {
         bindTo: el.parent()[0],
         onChange: function(x, y) {
-          scope.$apply(function(){
-            scope.x = x;
-            scope.y = y;
-          });
+          //scope.$apply(function(){
+          scope.x = x;
+          scope.y = y;
+
+          scope.$apply();
+          //});
         }
       });
       return;

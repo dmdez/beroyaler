@@ -1,4 +1,7 @@
 module.exports = function($q) {
+  this.x = 0;
+  this.y = 0;
+
   this.load = function(file) {
 
     var deferred = $q.defer();
@@ -15,6 +18,16 @@ module.exports = function($q) {
       }, opts );
     });
 
+    return deferred.promise;
+  };
+
+  this.exists = function() {
+    var deferred = $q.defer();
+    if (this.data) {
+      deferred.resolve();
+    } else {
+      deferred.reject("noimage");      
+    }
     return deferred.promise;
   }
 }

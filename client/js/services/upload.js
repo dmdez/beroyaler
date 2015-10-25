@@ -1,11 +1,15 @@
 module.exports = function($http, $q) {
   this.uploadFileToUrl = function(image){
     var deferred = $q.defer();
+    var ratio = 400/300
+    var x = image.x * ratio;
+    var y = image.y * ratio;
+
     var data = {
       timestamp: Date.now(),
       upload_preset: 'xjkacs1n',
       folder: 'beroyaler',
-      eager: 'l_royals_s97dxe,g_north_west,w_200,x_' + image.x + ',y_' + image.y
+      eager: 'l_royals_s97dxe,g_north_west,w_200,x_' + x + ',y_' + y
     };
 
     var fd = new FormData();
