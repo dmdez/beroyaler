@@ -1,9 +1,10 @@
+var templateUrl = require('ngtemplate!html!./imageadd.html');
 
 module.exports = function(imageService, $location) {
   return {
     restrict: 'E',
     replace: true,
-    templateUrl: 'imageadd.html',
+    templateUrl: templateUrl,
     link: function (scope) {
       scope.$watch("file", function(file) {
         if ( file ) {

@@ -6,6 +6,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 //var bodyParser = require('body-parser');
+var webpack = require('webpack');
+var webpackMiddleware = require('webpack-dev-middleware');
+var webpackHotMiddleware = require('webpack-hot-middleware');
+var config = require('./webpack.config.js');
 
 var routes = require('./routes/index');
 
@@ -14,6 +18,18 @@ var app = express();
 var env = process.env.NODE_ENV || 'development';
 app.locals.ENV = env;
 app.locals.ENV_DEVELOPMENT = env == 'development';
+
+if (app.get('env') === 'development') {
+  var compiler = webpack(config);
+  app.use(webpackMiddleware(compiler, {
+    publicPath: config.output.publicPath,
+    stats: {
+      colors: true
+    }
+  }));
+
+  app.use(webpackHotMiddleware(compiler));
+}
 
 // view engine setup
 
@@ -64,6 +80,5 @@ app.use(function(err, req, res, next) {
         title: 'error'
     });
 });
-
 
 module.exports = app;

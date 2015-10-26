@@ -1,9 +1,10 @@
+var templateUrl = require('ngtemplate!html!./imagelogo.html');
 
 module.exports = function(imageService, upload, $window) {
   return {
     restrict: 'E',
     replace: true,
-    templateUrl: 'imagelogo.html',
+    templateUrl: templateUrl,
     link: function (scope) {
       scope.image = imageService;
       scope.upload = function() {

@@ -1,9 +1,10 @@
+var templateUrl = require('ngtemplate!html!./imagecrop.html');
 
 module.exports = function(imageService, $location) {
   return {
     restrict: 'E',
     replace: true,
-    templateUrl: 'imagecrop.html',
+    templateUrl: templateUrl,
     link: function (scope) {
       scope.cropped = '';
       scope.image = imageService.data;
