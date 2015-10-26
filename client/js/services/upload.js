@@ -2,8 +2,8 @@ module.exports = function($http, $q) {
   this.uploadFileToUrl = function(image){
     var deferred = $q.defer();
     var ratio = 400/300
-    var x = image.x * ratio;
-    var y = image.y * ratio;
+    var x = Math.round(image.x * ratio);
+    var y = Math.round(image.y * ratio);
 
     var data = {
       timestamp: Date.now(),

@@ -6,7 +6,7 @@ module.exports = function($routeProvider) {
   };
 
   $routeProvider.
-    when('/upload', {
+    when('/', {
       template: '<imageadd></imageadd>'
     }).
     when('/crop', {
@@ -18,6 +18,6 @@ module.exports = function($routeProvider) {
       resolve: resolveImage
     }).
     otherwise({
-      redirectTo: '/upload'
+      redirectTo: '/'
     });
 }
