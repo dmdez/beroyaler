@@ -1,4 +1,9 @@
 <% include header %>
+  <p>
+    <a href="<%- image_path %>?attachment=true" class="button">Download</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=<%- profile_url %>" class="button">
+      Share on Facebook
+    </a>
+  </p>
   <img src="<%- image_path %>" />
-  <a href="<%- image_path %>?attachment=true" class="button">Download Image</a>
 <% include footer %>

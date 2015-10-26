@@ -22,10 +22,14 @@ router.get('/image/:id', function(req, res) {
 router.get('/profile/:id', function(req, res) {
   var image_id = req.params.id;
   var image_path = '/image/' + image_id;
-  var fullImageUrl = req.protocol + '://' + req.get('host') + image_path;
+  var profile_path = '/profile/' + image_id;
+  var host = req.protocol + '://' + req.get('host')
+  var fullImageUrl = host + image_path;
+  var fullProfileUrl = host + profile_path;
   res.render('image', {
     og_image: fullImageUrl,
-    image_path: image_path
+    image_path: image_path,
+    profile_url: fullProfileUrl
   });
 });
 
