@@ -24,6 +24,10 @@ img {
   max-width: 100%;
 }
 
+p {
+  margin: 0 0 1em;
+}
+
 .button {
   display: inline-block;
   padding: 0.5em 1em;
@@ -35,6 +39,14 @@ img {
   text-decoration: none;
   &:hover {
     background-color: rgba(255,255, 255, 0.05);
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 12px;
+  }
+}
+.buttonGroup {
+  .button {
+    margin: 0 0.2em 0.4em;
   }
 }
 .fileField {
@@ -54,8 +66,8 @@ img {
   }
 }
 .siteHeader {
-  padding: 0 0 1em;
-  max-width: 40em;
+  padding: 0 1em 1em;
+  max-width: 30em;
   margin: 0 auto;
 }
 .cropContainer {
