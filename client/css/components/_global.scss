@@ -1,0 +1,38 @@
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  background-color: #111B4B;
+}
+body {
+  background-color: #6D81C3;
+  background: linear-gradient(#6D81C3, #111B4B);
+  background-repeat: no-repeat;
+  color: white;
+  font-family: Roboto;
+  padding: 0.4em;
+  text-align: center;
+  font-weight: 100;
+}
+
+a {
+  color: white;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+.instructions {
+  font-size: 0.8em;
+}

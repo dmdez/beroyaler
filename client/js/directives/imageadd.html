@@ -1,8 +1,11 @@
 <div>
-  <p><a class="button" ng-click="getFBPic()">Get Facebook Picture</a></p>
-  <div class="fileField" ng-hide="loading">
-    <input type="file" id="addfile" ng-model="file" file />
-    <label for="addfile" class="button">Add Photo</label>
+  <div ng-hide="loading">
+    <p><a class="button" ng-click="getFBPic()">Get Facebook Picture</a></p>
+    <div class="fileField">
+      <input type="file" id="addfile" ng-model="file" file />
+      <label for="addfile" class="button">Add Photo</label>
+      <p class="instructions">(Click or drag photo here)</p>
+    </div>
   </div>
   <div ng-show="loading" class="loader"></div>
 </div>

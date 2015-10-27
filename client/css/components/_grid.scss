@@ -1,0 +1,103 @@
+.grid {
+  display: table;
+  width: 100%;
+  height: 100%;
+
+  &.-inline {
+    display: inline-table;
+    width: auto;
+  }
+
+  &.-fixed {
+    table-layout: fixed;
+  }
+
+  &.-p1 {
+    border-spacing: 0.2em 0;
+    margin: 0 -0.2em;
+    width: calc( 100% + 0.4em );
+  }
+
+  &.-p2 {
+    border-spacing: 0.4em 0;
+    margin: 0 -0.4em;
+    width: calc( 100% + 0.8em );
+  }
+
+  &.-p3 {
+    border-spacing: 0.6em 0;
+    margin: 0 -0.6em;
+    width: calc( 100% + 1.2em );
+  }
+
+  &.-p4 {
+    border-spacing: 0.8em 0;
+    margin: 0 -0.8em;
+    width: calc( 100% + 1.6em );
+  }
+
+  &.-p5 {
+    border-spacing: 1em 0;
+    margin: 0 -1em;
+    width: calc( 100% + 2em );
+  }
+
+  .grid-col.-middle,
+  &.-middle .grid-col {
+    vertical-align: middle;
+  }
+  .grid-col.-top,
+  &.-top .grid-col {
+    vertical-align: top;
+  }
+  .grid-col.-bottom,
+  &.-bottom .grid-col {
+    vertical-align: bottom;
+  }
+
+  &.-vmax,
+  .grid-col.-vmax {
+    height: 100%;
+  }
+
+  &.-hmax,
+  .grid-col.-hmax {
+    width: 100%;
+  }
+
+}
+
+.grid-col {
+  display: table-cell;
+  vertical-align: top;
+
+  @media screen and (max-width: 800px) {
+    .-minWidth5 & {
+      display: block;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .-minWidth4 & {
+      display: block;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .-minWidth3 & {
+      display: block;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .-minWidth2 & {
+      display: block;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .-minWidth1 & {
+      display: block;
+    }
+  }
+}
+
+.grid-row {
+  display: table-row;
+}

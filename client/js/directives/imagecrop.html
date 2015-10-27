@@ -3,9 +3,13 @@
     <div class="cropArea">
       <img-crop image="image" result-image-format="image/jpeg" result-image="cropped" result-image-size="400" area-type="square"></img-crop>
     </div>
-    <a class="button" ng-click="done()">Done Cropping</a>
-    <div>
-      <a href="#/">Change Photo</a>
+    <div class="grid -fixed -p2 pt1">
+      <div class="grid-col">
+        <a href="#/" class="button">Back</a>
+      </div>
+      <div class="grid-col">
+        <a class="button" ng-click="done()">Next</a>
+      </div>
     </div>
   </div>
 </div>

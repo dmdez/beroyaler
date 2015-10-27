@@ -20,7 +20,16 @@ var config = {
   ],
   module: {
     loaders: [
-      { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader' }
+      {
+        test: /\.scss$/,
+        loader: 'style-loader!css-loader!autoprefixer-loader?browsers=last 2 version!sass-loader'
+      }
+    ],
+    preLoaders: [
+      {
+        test: /\.scss/,
+        loader: 'import-glob-loader'
+      }
     ]
   }
 };
