@@ -9,7 +9,7 @@ module.exports = function($http, $q, imageService) {
       timestamp: Date.now(),
       upload_preset: 'xjkacs1n',
       folder: 'beroyaler',
-      eager: 'l_royals_s97dxe,g_north_west,w_200,x_' + x + ',y_' + y
+      eager: 'l_alc_rrkb4t,g_north_west,w_200,x_' + x + ',y_' + y
     };
 
     var fd = new FormData();
