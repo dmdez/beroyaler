@@ -1,5 +1,5 @@
 module.exports = function (facebookConfigProvider) {
-  facebookConfigProvider.setAppId('1649478225294429');
+  facebookConfigProvider.setAppId(window.fbappid);
   facebookConfigProvider.setLanguage('en-US');
   facebookConfigProvider.setDebug(false);
 

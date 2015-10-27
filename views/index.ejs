@@ -2,6 +2,10 @@
 
   <div ng-view></div>
 
+
+  <script>
+    window.fbappid = '<%- process.env.FACEBOOK_APPID %>';
+  </script>
   <script src="/static/js/image-load.js"></script>
   <script src="/static/js/draggy.js"></script>
   <script src="/assets/app.bundle.js"></script>
