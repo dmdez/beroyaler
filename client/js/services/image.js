@@ -2,6 +2,10 @@ module.exports = function($q) {
   this.x = 0;
   this.y = 0;
 
+  this.getTargetWidth = function() {
+    return this.fbimage ? 480 : 400;
+  };
+
   this.load = function(file) {
 
     var deferred = $q.defer();

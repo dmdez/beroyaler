@@ -3,12 +3,12 @@ module.exports = function(facebookConfig, facebookService, $q) {
     var deferred = $q.defer();
 
     var queryPicture = function() {
-      facebookService.api('/me/picture?height=400').then(function (response) {
+      facebookService.api('/me/picture?width=480&height=480').then(function (response) {
         if ( response.data && response.data.url ) {
           deferred.resolve(response.data.url);
         } else {
           deferred.reject();
-        }        
+        }
       });
     }
 

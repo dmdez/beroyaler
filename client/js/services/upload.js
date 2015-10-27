@@ -1,7 +1,7 @@
 module.exports = function($http, $q, imageService) {
   this.uploadFileToUrl = function(){
     var deferred = $q.defer();
-    var ratio = 400/300
+    var ratio = imageService.getTargetWidth()/300
     var x = Math.round(imageService.x * ratio);
     var y = Math.round(imageService.y * ratio);
 
