@@ -21,12 +21,26 @@ module.exports = function($q) {
     return deferred.promise;
   };
 
-  this.exists = function() {
+  this.getCropped = function() {
+    return this.cropped || this.fbimage;
+  };
+
+  this.canAddLogo = function() {
+    var deferred = $q.defer();
+    if (this.data || this.fbimage) {
+      deferred.resolve();
+    } else {
+      deferred.reject("noimage");
+    }
+    return deferred.promise;
+  }
+
+  this.canCrop = function() {
     var deferred = $q.defer();
     if (this.data) {
       deferred.resolve();
     } else {
-      deferred.reject("noimage");      
+      deferred.reject("noimage");
     }
     return deferred.promise;
   }

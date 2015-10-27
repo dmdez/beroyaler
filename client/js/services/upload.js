@@ -1,9 +1,9 @@
-module.exports = function($http, $q) {
-  this.uploadFileToUrl = function(image){
+module.exports = function($http, $q, imageService) {
+  this.uploadFileToUrl = function(){
     var deferred = $q.defer();
     var ratio = 400/300
-    var x = Math.round(image.x * ratio);
-    var y = Math.round(image.y * ratio);
+    var x = Math.round(imageService.x * ratio);
+    var y = Math.round(imageService.y * ratio);
 
     var data = {
       timestamp: Date.now(),
@@ -27,7 +27,7 @@ module.exports = function($http, $q) {
       var api_url = response.data.api_url;
 
       fd.append('signature', signature);
-      fd.append('file', image.cropped);
+      fd.append('file', imageService.getCropped());
       fd.append('api_key', api_key);
 
       $http.post(api_url, fd, {

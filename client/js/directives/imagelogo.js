@@ -9,7 +9,7 @@ module.exports = function(imageService, upload, $window) {
       scope.image = imageService;
       scope.upload = function() {
         scope.loading = true;
-        upload.uploadFileToUrl(scope.image).then(function(data) {
+        upload.uploadFileToUrl().then(function(data) {
           var id = data.public_id.split("/")[1];
           $window.location = "/profile/" + id;
         });

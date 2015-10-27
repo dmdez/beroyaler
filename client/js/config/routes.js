@@ -1,9 +1,4 @@
 module.exports = function($routeProvider) {
-  var resolveImage = {
-    image: ['image', function(image){
-      return image.exists();
-    }]
-  };
 
   $routeProvider.
     when('/', {
@@ -11,11 +6,19 @@ module.exports = function($routeProvider) {
     }).
     when('/crop', {
       template: '<imagecrop></imagecrop>',
-      resolve: resolveImage
+      resolve: {
+        image: ['imageService', function(imageService){
+          return imageService.canCrop();
+        }]
+      }
     }).
     when('/logo', {
       template: '<imagelogo></imagelogo>',
-      resolve: resolveImage
+      resolve: {
+        image: ['imageService', function(imageService){
+          return imageService.canAddLogo();
+        }]
+      }
     }).
     otherwise({
       redirectTo: '/'

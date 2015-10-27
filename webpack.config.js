@@ -1,10 +1,12 @@
 var path = require('path');
 var webpack = require('webpack');
 
-module.exports = {
+var config = {
   entry: {
     app: ["./client/js/app.js"],
-    styles: ["webpack-hot-middleware/client", "./client/css/styles.js"]
+    styles: [
+      "./client/css/styles.js"
+    ]
   },
   output: {
     path: path.join(__dirname, "public/assets"),
@@ -22,3 +24,9 @@ module.exports = {
     ]
   }
 };
+
+if ( process.env.NODE_ENV != "production") {
+  config.entry.styles.push("webpack-hot-middleware/client");
+}
+
+module.exports = config;
