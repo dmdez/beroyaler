@@ -1,15 +1,16 @@
 module.exports = function($http, $q, imageService) {
-  this.uploadFileToUrl = function(){
+  this.uploadFileToUrl = function(opts){
     var deferred = $q.defer();
     var ratio = imageService.getTargetWidth()/300
     var x = Math.round(imageService.x * ratio);
     var y = Math.round(imageService.y * ratio);
+    var width = Math.round(opts.logo.cssWidth * ratio);
 
     var data = {
       timestamp: Date.now(),
       upload_preset: 'xjkacs1n',
       folder: 'beroyaler',
-      eager: 'l_alc_rrkb4t,g_north_west,w_200,x_' + x + ',y_' + y
+      eager: 'l_' + opts.logo.imageId + ',g_north_west,w_' + width + ',x_' + x + ',y_' + y
     };
 
     var fd = new FormData();

@@ -266,6 +266,15 @@
         eleWidth     = parseInt(ele.offsetWidth, 10);
         draggyHeight = parseInt(this.ele.offsetHeight, 10);
         eleHeight    = parseInt(ele.offsetHeight, 10);
+
+        if ( this.config.width ) {
+          draggyWidth = this.config.width;
+        }
+
+        if ( this.config.height ) {
+          draggyHeight = this.config.height;
+        }
+
         if (!this.ele.restrictX) {
           xLimit1      = elePos[0] - draggyPos[0];
           xLimit2      = (eleWidth - draggyWidth) - Math.abs(xLimit1);

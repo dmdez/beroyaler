@@ -1,12 +1,20 @@
 <div>
   <div ng-hide="loading">
     <p class="instructions">
-      Move the logo to where you want it on your picture.
+      Choose a logo and move the logo to where you want it on your picture.
     <p>
+    <div class="buttonGroup">
+      <div class="buttonGroup-item" ng-repeat="logo in image.logoOptions">
+        <a ng-click="selectLogo(logo)" ng-bind="logo.id" class="button" ng-class="{'-active': selectedLogo.id == logo.id}"></a>
+      </div>
+    </div>
     <div class="preview">
       <img ng-src="{{image.getCropped()}}" />
-      <div draggable x="image.x" y="image.y" class="logo">
-        <img src="http://res.cloudinary.com/dmdez/image/upload/v1445878970/alc_rrkb4t.png" />
+      <div ng-repeat="logo in image.logoOptions" draggable  class="logo"
+        x="image.x" y="image.y"
+        ng-show="selectedLogo.id == logo.id"
+        width="{{ logo.cssWidth }}" height="{{ logo.cssHeight }}">
+        <img ng-src="{{ logo.src }}" ng-style="{ width: logo.cssWidth + 'px', height: logo.cssHeight + 'px'}" />
       </div>
     </div>
     <a class="button" ng-click="upload()">Upload</a>

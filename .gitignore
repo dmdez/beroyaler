@@ -3,3 +3,4 @@ public/assets
 .sass-cache
 .env
 .DS_Store
+npm-debug.log

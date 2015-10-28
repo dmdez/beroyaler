@@ -9,27 +9,27 @@
   width: 300px;
   height: 300px;
   margin: 1em auto;
+  position: relative;
+  & > img {
+    width: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
 }
 
 .logo {
-  width: 150px;
-  height: 110px;
   position: absolute;
   top: 0;
   left: 0;
   cursor: move;
+  z-index: 2;
   &:hover {
     outline: 3px solid rgba(yellow, 0.3);
   }
   img {
     width: 100%;
     height: auto;
-  }
-}
-
-.preview {
-  position: relative;
-  & > img {
-    width: 300px;
   }
 }

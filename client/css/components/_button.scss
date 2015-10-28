@@ -1,6 +1,6 @@
 .button {
   display: block;
-  padding: 0.5em 1em;
+  padding: 0.5em 0;
   border: 1px solid white;
   border-radius: 0.2em;
   cursor: pointer;
@@ -10,5 +10,29 @@
   text-decoration: none;
   &:hover {
     background-color: rgba(255,255, 255, 0.05);
+  }
+  &.-active {
+    background-color: white;
+    color: #111B4B;
+  }
+}
+
+.buttonGroup {
+  display: table;
+  width: 100%;
+  font-size: 0.9em;
+  .button {
+    border-radius: 0;
+    border-right: 0;
+  }
+  .buttonGroup-item {
+    display: table-cell;
+    &:first-child .button {
+      border-radius: 0.2em 0 0 0.2em;
+    }
+    &:last-child .button {
+      border-radius: 0 0.2em 0.2em 0;
+      border-right: 1px solid white;
+    }
   }
 }
